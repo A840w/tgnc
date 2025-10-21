@@ -7,6 +7,40 @@ import threading
 import os
 import sys
 
+from cfonts import render
+
+
+CG = {
+    'RD': '\033[1;31m','gn': '\033[1;32m','ylo': '\033[1;33m','cya?': '\033[36m','bl': '\033[1;34m','rt': '\033[0m','gd': '\x1b[38;5;220m','BD': '\033[1m',
+}
+BGCG = {
+    'BK'     : '\033[40m','RD'       : '\033[41m','gn'     : '\033[42m','ylo'    : '\033[43m','bl'      : '\033[44m','MG'   : '\033[45m','cya?'      : '\033[46m','white'     : '\033[47m'
+}
+
+BG256 = {
+    'bright_MG' : '\033[48;5;201m',
+    'bright_bl'    : '\033[48;5;117m',
+    'bright_gn'   : '\033[48;5;82m',
+    'bright_ylo'  : '\033[48;5;226m',
+    'bright_cya?'    : '\033[48;5;87m',
+    'bright_RD'     : '\033[48;5;196m',
+    'gray'           : '\033[48;5;244m',
+    'orange'         : '\033[48;5;208m',
+    'purple'         : '\033[48;5;93m'
+}
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+def logo():
+    clear()
+    print(render("• CSNV •", colors=["red", "blue"]))
+    print(CG['bl'] + "Telegram Automation"+CG['rt']+BG256['purple']+ " NC " + CG['rt'])
+    print(CG['ylo'] + "Created by BANE." + CG['rt'])
+    print(CG['RD'] + "Version: v9 " + CG['rt'])
+    print(CG['gn']+CG['BD']+ "multi bot\033[0m  "+BG256["bright_RD"]+"gc killer" + CG['rt'])
+    print(BGCG['MG'] + "NO BATCH PROCESSING" + CG['rt'])
+   # print(render("• CSNV •", CG=["RD", "bl"]))
+logo()
 
 SUFFIXES = ["ki ma बोली XLR8/GIGA/SYLAS से चूदूंगी🥀😅🤪", "ki ma कितनी बार चूदी ? 😲😲🤔🤔🤪🥀", " KE कितने बाप ?🤔🤔", "ki मां xlr8 से तेज तेज चूदी😲😲🤪🤣🤣🫵🏻❤️‍🔥", "tmkc", "atmkbfj"]
 EMOJIS =[
@@ -287,9 +321,9 @@ def test_bot_token(bot_token):
 
 def interactive_setup():
     """Interactive setup function"""
-    print(f"{Colors.PURPLE}================================={Colors.NC}")
+    print(f"{Colors.PURPLE}---------------------------------{Colors.NC}")
     print(f"{Colors.PURPLE}   TELEGRAM NC SETUP       {Colors.NC}")
-    print(f"{Colors.PURPLE}================================={Colors.NC}")
+    print(f"{Colors.PURPLE}---------------------------------{Colors.NC}")
     print()
     
  
